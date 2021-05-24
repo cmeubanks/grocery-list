@@ -7,7 +7,9 @@ const CardContainer = (props) => {
       <Card
         name={card.name}
         amount={card.amount}
+        id={card.id}
         key={card.id}
+        removeItem={props.removeItem}
       />
     )
   })
