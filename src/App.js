@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    getItems()
+    apiCalls.getItems()
     .then(data => {
       this.setState({ cards: data })
     })
