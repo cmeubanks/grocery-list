@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import CardContainer from './components/CardContainer.js';
 import Form from './components/Form.js';
-import getIdeas from './api.js'
+import apiCalls from './api.js'
 
 
 class App extends Component {
@@ -14,8 +14,10 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    const data = await getItems()
-    this.setState()
+    getItems()
+    .then(data => {
+      this.setState({ cards: data })
+    })
   }
 
   addItem = (newItem) => {
