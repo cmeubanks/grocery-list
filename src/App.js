@@ -2,18 +2,20 @@ import './App.css';
 import React, { Component } from 'react';
 import CardContainer from './components/CardContainer.js';
 import Form from './components/Form.js';
+import getIdeas from './api.js'
 
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      cards: [
-        { id: 1, name: 'Apple Pie', amount: '2 pie crusts' },
-        { id: 2, name: 'Lime', amount: '3' },
-        { id: 3, name: 'Cheese', description: '5 blocks' }
-      ]
+      cards: []
     }
+  }
+
+  componentDidMount = () => {
+    const data = await getItems()
+    this.setState()
   }
 
   addItem = (newItem) => {
