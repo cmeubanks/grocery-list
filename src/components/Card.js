@@ -1,12 +1,11 @@
 import React from 'react';
 
-const Card = (props) => {
-  console.log(props)
+const Card = ({name, amount, id, removeItem}) => {
   return (
     <div>
-      <h2>{props.name}</h2>
-      <p>{props.amount}</p>
-      <button onClick={() => props.removeItem(props.id)}>DELETE</button>
+      <h2>{name}</h2>
+      <p>{amount}</p>
+      <button onClick={() => removeItem(id)}>DELETE</button>
     </div>
   )
 }
