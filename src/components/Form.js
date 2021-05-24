@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 class Form extends Component {
-  contructor() {
+  constructor() {
     super();
     this.state = {
       name: '',
@@ -11,8 +11,21 @@ class Form extends Component {
   }
 
   handleChange = (event) => {
-    console.log(event)
-    this.setState({ [event.target.name] = event.target.value});
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  submitItem = event => {
+    event.preventDefault();
+    const newItem = {
+      id: Date.now(),
+      ...this.state
+    }
+    this.props.addItem(newItem);
+    this.clearInputs();
+  }
+
+  clearInputs = () => {
+    this.setState({title: '', description: ''});
   }
 
   render() {
@@ -27,13 +40,13 @@ class Form extends Component {
         />
         <input
           type='text'
-          placeholder='item'
-          name='name'
-          value={this.state.name}
+          placeholder='amount'
+          name='amount'
+          value={this.state.amount}
           onChange={event => this.handleChange(event)}
         />
 
-        <button>SUBMIT</button>
+        <button onClick={event => this.submitItem(event)}>SUBMIT</button>
       </form>
     )
   }

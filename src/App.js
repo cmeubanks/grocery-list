@@ -16,11 +16,15 @@ class App extends Component {
     }
   }
 
+  addItem = (newItem) => {
+    this.setState({ cards: [...this.state.cards, newItem ]})
+  }
+
   render() {
     return (
       <main>
         <h1>Grocery Store List</h1>
-        <Form />
+        <Form addItem={this.addItem}/>
         {!this.state.cards && <p> No Groceries Added Yet. You must have a full pantry!</p>}
         <CardContainer cards={this.state.cards} />
       </main>
