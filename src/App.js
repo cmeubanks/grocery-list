@@ -33,7 +33,7 @@ class App extends Component {
 
   render() {
     return (
-      <main>
+      <main className='App'>
         <h1>Grocery Store List</h1>
         <Form addItem={this.addItem} />
         {!this.state.cards && <p> No Groceries Added Yet. You must have a full pantry!</p>}

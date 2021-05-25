@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Form.css';
 
 
 class Form extends Component {
@@ -14,6 +15,10 @@ class Form extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+  clearInputs = () => {
+    this.setState({name: '', amount: ''});
+  }
+
   submitItem = event => {
     event.preventDefault();
     const newItem = {
@@ -24,9 +29,6 @@ class Form extends Component {
     this.clearInputs();
   }
 
-  clearInputs = () => {
-    this.setState({title: '', description: ''});
-  }
 
   render() {
     return (

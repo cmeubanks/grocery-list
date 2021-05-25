@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card.js';
+import './CardContainer.css';
 
 const CardContainer = ({cards, removeItem}) => {
   const cardDetails = cards.map(card => {
@@ -14,7 +15,7 @@ const CardContainer = ({cards, removeItem}) => {
     )
   })
   return (
-    <div>
+    <div className='card-container'>
       {cardDetails}
     </div>
   )
