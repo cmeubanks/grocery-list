@@ -1,0 +1,17 @@
+{
+  {
+  "id": 1,
+  "name": "Tortillas",
+  "amount": "1 bag"
+  },
+  {
+  "id": 2,
+  "name": "Guac",
+  "amount": "4 avocados"
+  },
+  {
+  "id": 3,
+  "name": "Salsa",
+  "amount": "2 jars"
+  },
+}
