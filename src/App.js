@@ -22,7 +22,10 @@ class App extends Component {
   }
 
   addItem = (newItem) => {
-    this.setState({ cards: [...this.state.cards, newItem ]})
+    apiCalls.postItem(newItem)
+    .then(data => {
+      this.setState({ cards: [...this.state.cards, data ]})
+    })
   }
 
   removeItem = (id) => {
