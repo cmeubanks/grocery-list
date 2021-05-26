@@ -1,4 +1,4 @@
-{
+[
   {
   "id": 1,
   "name": "Tortillas",
@@ -13,5 +13,5 @@
   "id": 3,
   "name": "Salsa",
   "amount": "2 jars"
-  },
-}
+  }
+]
